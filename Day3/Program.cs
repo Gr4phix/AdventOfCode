@@ -12,9 +12,9 @@ namespace Day3
 
         static void Main(string[] args)
         {
-            int width = 100; //700
-            int height = 100; //700
-            int count = 1000; //480000
+            int width = 700; //700
+            int height = 700; //700
+            int count = 480000; //480000
             int[,] matrix = new int[width, height];
 
             matrix[width / 2, height / 2] = 1;
@@ -116,8 +116,11 @@ namespace Day3
 
             int lastSum = 0;
 
+            Console.Write("#2: Bigger than which input?: ");
+            int input2 = Convert.ToInt32(Console.ReadLine());
+
             { //Creates second matrix
-                for (int i = 1; lastSum < 400000 ; i++)
+                for (int i = 1; lastSum < input2 ; i++)
                 {
                     if (directionCount == helpDirectionCount)
                     {
@@ -165,31 +168,16 @@ namespace Day3
                 }
             }
 
-            for (int i = 0; i < height; i++)
-            {
-                for (int l = 0; l < width; l++)
-                {
-                    Console.Write("{0}  ", matrix[l, i]);
-                }
-                Console.Write("\n");
-            }
+            //for (int i = 0; i < height; i++)
+            //{
+            //    for (int l = 0; l < width; l++)
+            //    {
+            //        Console.Write("{0}  ", matrix[l, i]);
+            //    }
+            //    Console.Write("\n");
+            //}
 
-            Console.Write("#2: From which square?: ");
-            int input2 = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 0; i < width; i++)
-            {
-                for (int j = 0; j < height; j++)
-                {
-                    if (input2 == matrix[i, j])
-                    {
-                        x = i;
-                        y = j;
-                        break;
-                    }
-                }
-            }
-            Console.Write("The shortest Path is: {0} ", (Math.Abs(width / 2 - x) + Math.Abs(height / 2 - y)));
+            Console.Write("The awnser is: {0} ", lastSum);
 
             Console.ReadKey();
         }
