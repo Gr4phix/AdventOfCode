@@ -1,7 +1,0 @@
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\bin\Debug\Day2.exe.config
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\bin\Debug\Day2.exe
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\bin\Debug\Day2.pdb
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\obj\Debug\Day2.csprojResolveAssemblyReference.cache
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\obj\Debug\Day2.csproj.CoreCompileInputs.cache
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\obj\Debug\Day2.exe
-C:\Users\flori\Documents\AdventOfCode\Day2\Day2\obj\Debug\Day2.pdb
