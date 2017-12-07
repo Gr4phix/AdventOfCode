@@ -1,0 +1,7 @@
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\bin\Debug\Day5.exe.config
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\bin\Debug\Day5.exe
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\bin\Debug\Day5.pdb
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\obj\Debug\Day5.csprojResolveAssemblyReference.cache
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\obj\Debug\Day5.csproj.CoreCompileInputs.cache
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\obj\Debug\Day5.exe
+C:\Users\flori\Documents\AdventOfCode\2017\Day5\Day5\obj\Debug\Day5.pdb
