@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Day10
+namespace adventofcode
 {
     class Program
     {
@@ -48,7 +48,7 @@ namespace Day10
                     pos++;
                     if (pos == list.Count) pos = 0;
                 }
-                
+
                 Console.Write("{0} --- {1} \n", String.Join(", ", list), String.Join(", ", lengths));
                 //Console.ReadKey();
 
@@ -69,6 +69,7 @@ namespace Day10
             {
                 lengthsChar.Add((int)charr);
             }
+
             lengthsChar.Add(17);
             lengthsChar.Add(31);
             lengthsChar.Add(73);
@@ -88,16 +89,18 @@ namespace Day10
             int rounds = 64;
             List<int> lengthsHelp = new List<int>();
             do
-            {                
+            {
                 foreach (int helpppp in lengthsChar)
                     lengthsHelp.Add(helpppp);
                 do
                 {
                     List<int> help = new List<int>();
                     int pos = cPos;
-                    for (int i = 0; i < lengthsChar[0]; i++)
+                    // Änderung von lengthsChar in lengthsHelp
+                    for (int i = 0; i < lengthsHelp[0]; i++)
                     {
-                        help.Add(Convert.ToInt32(list[pos].ToString()));
+                        // list2 statt list verwenden
+                        help.Add(Convert.ToInt32(list2[pos].ToString()));
 
                         pos++;
                         if (pos == list2.Count) pos = 0;
@@ -106,19 +109,22 @@ namespace Day10
                     help.Reverse();
 
                     pos = cPos;
-                    for (int i = 0; i < help.Count; i++)
+                    // du hattest hier help.Count, aber die Bedingungsvariable zu verändern ist meistens verkehrt -> lengthsHelp[0] ist der korrekte Wert
+                    for (int i = 0; i < lengthsHelp[0]; i++)
                     {
                         list2[pos] = help[0];
                         help.RemoveAt(0);
 
                         pos++;
-                        if (pos == list.Count) pos = 0;
+                        if (pos == list2.Count) pos = 0;
                     }
 
-                    Console.Write("{0} --- {1} \n", String.Join(", ", list), String.Join(", ", lengthsHelp));
+                    // hier wieder list --> list2
+                    Console.Write("{0} --- {1} \n", String.Join(", ", list2), String.Join(", ", lengthsHelp));
                     //Console.ReadKey();
 
-                    cPos = (cPos + lengthsHelp[0] + skipSize) % list.Count;
+                    // hier auch list --> list2 (nicht so wichtig, aber zur Vollständigkeit)
+                    cPos = (cPos + lengthsHelp[0] + skipSize) % list2.Count;
                     lengthsHelp.RemoveAt(0);
                     skipSize++;
 
@@ -136,7 +142,8 @@ namespace Day10
                 int help = 0;
                 for (int l = 0; l < 16; l++)
                 {
-                    help ^= list2[i * l];
+                    // Formel war inkorrekt
+                    help ^= list2[i * 16 + l];
                 }
                 denseHash.Add(help);
             }
@@ -146,7 +153,8 @@ namespace Day10
             string answer = "";
             for (int i = 0; i < denseHash.Count; i++)
             {
-                answer += denseHash[i].ToString("X");
+                // einstellige Hex-Zahlen brauchen führende 0
+                answer += denseHash[i].ToString("X").PadLeft(2, '0');
             }
 
             Console.Write("#2: The knot hash is: {0}. \n", answer);
