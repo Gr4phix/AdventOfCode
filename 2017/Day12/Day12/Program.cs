@@ -65,7 +65,7 @@ namespace Day12
                 }
             }
             List<int> help = new List<int>();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
                 foreach (int value in programmsID0)
                 {
@@ -78,9 +78,10 @@ namespace Day12
                         help.Add(pipe);
                     }
                 }
+                foreach (int pipe in help)
+                    programmsID0.Add(pipe);
             }
-            foreach (int pipe in help)
-                programmsID0.Add(pipe);
+
 
             List<int> programmsID0NoDups = programmsID0.Distinct().ToList();
 
