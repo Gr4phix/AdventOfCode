@@ -1,11 +1,11 @@
-﻿<Properties StartupConfiguration="{8A3789F8-628B-4AE3-A137-C87C9E8855BE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Day02/Program.cs">
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{3DD6D7EB-0A7A-4251-80E9-33AD4B22CC51}|Default">
+  <MonoDevelop.Ide.ItemProperties.Day03 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Day03/Program.cs">
     <Files>
-      <File FileName="Day02/Program.cs" Line="41" Column="40" />
+      <File FileName="Day03/Program.cs" Line="38" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Day02 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
