@@ -40,16 +40,31 @@ namespace Day04
                 }
             }
 
-            //var mostSleepingGuardId = record.Single(x => x.CalculateMinutesAsleep()==record.Max(y => y.CalculateMinutesAsleep())).Id;
-            string mostSleepingGuardId = "";
-            foreach (var item in record)
+            //Calculate the Guard, who sleeps the most
+            Dictionary<string, int> TotalMinutesAsleep = new Dictionary<string, int>();
+            foreach (var shift in record)
             {
-                if (item.CalculateMinutesAsleep() == record.Max(y => y.CalculateMinutesAsleep()))
+                if(TotalMinutesAsleep.Keys.Contains(shift.Id))
                 {
-                    mostSleepingGuardId = item.Id;
-                    break;
+                    TotalMinutesAsleep[shift.Id] += shift.CalculateMinutesAsleep();
+                }
+                else
+                {
+                    TotalMinutesAsleep.Add(shift.Id, shift.CalculateMinutesAsleep());
                 }
             }
+            var mostSleepingGuardId = TotalMinutesAsleep.Single(x => x.Value == TotalMinutesAsleep.Values.Max()).Key;
+
+            //var mostSleepingGuardId = record.Single(x => x.CalculateMinutesAsleep()==record.Max(y => y.CalculateMinutesAsleep())).Id;
+            //string mostSleepingGuardId = "";
+            //foreach (var item in record)
+            //{
+            //    if (item.CalculateMinutesAsleep() == record.Max(y => y.CalculateMinutesAsleep()))
+            //    {
+            //        mostSleepingGuardId = item.Id;
+            //        break;
+            //    }
+            //}
 
             var timesAsleepInThisMinute = new List<int>();
             for (int i = 0; i < 60; i++)
@@ -65,6 +80,21 @@ namespace Day04
             }
             Console.WriteLine(mostSleepingGuardId + ", " + timesAsleepInThisMinute.IndexOf(timesAsleepInThisMinute.Max()) + ", " + String.Join(',', timesAsleepInThisMinute));
             Console.WriteLine($"{timesAsleepInThisMinute.IndexOf(timesAsleepInThisMinute.Max()) * Convert.ToInt32(mostSleepingGuardId.Substring(1))}");
+
+            List<Guard> guards = new List<Guard>();
+            foreach (var shift in record)
+            {
+                if(guards.Any(x=>x.Id.Equals(shift.Id)))
+                {
+                    guards.Single(x => x.Id.Equals(shift.Id)).Shifts.Add(shift);
+                }
+                else
+                {
+                    guards.Add(new Guard(shift.Id, shift));
+                }
+            }
+            var guard = guards.Single(x => x.GetDayWithMostSleep().Value == guards.Max(y => y.GetDayWithMostSleep().Value));
+            Console.WriteLine($"Part 2: {Convert.ToInt32(guard.Id.Substring(1)) * guard.GetDayWithMostSleep().Key}");
         }
     }
 
@@ -96,6 +126,44 @@ namespace Day04
             }
             MinutesAsleep = temp;
             return temp;
+        }
+    }
+
+    class Guard
+    {
+        public List<Shift> Shifts;
+        public string Id { get; set; }
+
+        public Guard(string id, Shift shift)
+        {
+            Id = id;
+            Shifts = new List<Shift>
+            {
+                shift
+            };
+        }
+
+        /// <summary>
+        /// Gets the day with most sleep.
+        /// </summary>
+        /// <returns>Minute; Times asleep in this minute</returns>
+        public KeyValuePair<int, int> GetDayWithMostSleep()
+        {
+            List<int> temp = new List<int>();
+            for (int i = 0; i < 60; i++)
+            {
+                temp.Add(0);
+            }
+
+            foreach (var shift in Shifts)
+            {
+                for (int i = 0; i < 60; i++)
+                {
+                    temp[i] += shift.Sleeping[i] ? 1 : 0;
+                }
+            }
+
+            return new KeyValuePair<int, int>(temp.IndexOf(temp.Max()), temp.Max());
         }
     }
 }
