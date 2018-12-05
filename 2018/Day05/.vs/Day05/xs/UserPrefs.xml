@@ -1,8 +1,8 @@
-﻿<Properties StartupConfiguration="{47496746-445A-4965-B9A6-14A44D34C301}|Default">
-  <MonoDevelop.Ide.ItemProperties.Day04 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Day04/Program.cs">
+﻿<Properties StartupConfiguration="{FAFC7DFB-338D-405A-8405-D1F139D88570}|Default">
+  <MonoDevelop.Ide.ItemProperties.Day05 FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Day05/Program.cs">
     <Files>
-      <File FileName="Day04/Program.cs" Line="12" Column="89" />
+      <File FileName="Day05/Program.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
