@@ -1,0 +1,11 @@
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/bin/Debug/netcoreapp2.1/Day06.deps.json
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/bin/Debug/netcoreapp2.1/Day06.runtimeconfig.json
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/bin/Debug/netcoreapp2.1/Day06.runtimeconfig.dev.json
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/bin/Debug/netcoreapp2.1/Day06.dll
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/bin/Debug/netcoreapp2.1/Day06.pdb
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/obj/Debug/netcoreapp2.1/Day06.csprojAssemblyReference.cache
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/obj/Debug/netcoreapp2.1/Day06.csproj.CoreCompileInputs.cache
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/obj/Debug/netcoreapp2.1/Day06.AssemblyInfoInputs.cache
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/obj/Debug/netcoreapp2.1/Day06.AssemblyInfo.cs
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/obj/Debug/netcoreapp2.1/Day06.dll
+/Users/florian/Documents/AdventOfCode/AdventOfCode/2018/Day06/Day06/obj/Debug/netcoreapp2.1/Day06.pdb
